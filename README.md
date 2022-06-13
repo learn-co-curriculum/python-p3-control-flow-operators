@@ -3,7 +3,7 @@
 ## Learning Goals
 
 - Use common comparison functions for control flow (`==`, `!=`, `>`, `<`)
-- Use common operators for control flow (`&&`, `||`, `!`, `?:`)
+- Use common operators for control flow (`&`, `|`, `~`, `^`)
 - Understand the differences in syntax between Ruby and JavaScript
 
 ## Introduction
@@ -61,9 +61,9 @@ equivalent values:
 
 ```py
 "1" == 1
-# => false
+# False
 1 == 1
-# => true
+# True
 ```
 
 There are some differences between Python's `==` and JavaScript's `===` though. In
@@ -76,12 +76,12 @@ returns `false` because the two arrays are unique objects in memory:
 // => false
 ```
 
-In Python, this example returns `true` because Python considers these to have
+In Python, this example returns `True` because Python considers these to have
 equivalent values:
 
 ```py
 [1, 2, 3] == [1, 2, 3]
-# => true
+# True
 ```
 
 Python will also check if an Integer has the equivalent value to a Float, even
@@ -89,35 +89,16 @@ though they're technically different data types:
 
 ```py
 1.0 == 1
-# => true
+# True
 ```
 
-The reason for this is because in Python, the `==` operator is actually a _function_
-that has unique behavior that **depends on which class the function is defined
-in**! The code above is equivalent to the following function call:
+> **Note**: While Python does have an operator, `is`, that is similar to
+> JavaScript's `===`, **it is not used the same way as it is in JavaScript**.
+> There are very few scenarios when you want to use the `is` operator in
+> Python; in general, for comparing data, you want to use the `==`. [See here for
+> examples][Python is] if you're curious about what this operator does.
 
-```py
-1.0.==(1)
-```
-
-Because Python heavily favors object-orientation as a language, you'll find
-that many features other languages would define as operators (like `==`, `>`,
-even math operators like `+` and `*`) are actually functions. If you're unsure
-what these functions do in a particular scenario, check the class definition in
-the documentation for the data type on the left-hand side of the `==` (for
-example, here is the documentation for the [Array class][array ==] and the
-[Integer class][integer ==]).
-
-[array ==]: https://Python-doc.org/core-2.7.3/Array.html#function-i-3D-3D
-[integer ==]: https://Python-doc.org/core-2.7.3/Integer.html#function-i-3D-3D
-
-> **Note**: While Python does have a `===` function, **it is not used the same way
-> as it is in JavaScript**. There are very few scenarios when you want to use
-> the `===` function in Python; in general, for comparing data, you want to use the
-> `==`. [See here for examples][Python ===] if you're curious about what this
-> function does.
-
-[Python ===]: https://stackoverflow.com/questions/3422223/vs-in-Python/3422349#3422349
+[Python is]: https://stackoverflow.com/questions/21774629/python-is-vs-javascript
 
 ## Logical Operators
 
