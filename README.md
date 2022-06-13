@@ -2,17 +2,17 @@
 
 ## Learning Goals
 
-- Use common comparison methods for control flow (`==`, `!=`, `>`, `<`)
+- Use common comparison functions for control flow (`==`, `!=`, `>`, `<`)
 - Use common operators for control flow (`&&`, `||`, `!`, `?:`)
 - Understand the differences in syntax between Ruby and JavaScript
 
 ## Introduction
 
-Just like JavaScript, Ruby has several ways we can control the flow of execution
-in our programs:
+Just like JavaScript, Python has several ways we can control the flow of
+execution in our programs:
 
-- We can use conditional statements like `if/else` and `switch/case`
-- We can use looping constructs like `loop` (Ruby) and `while` (JavaScript)
+- We can use conditional statements like `if/else` and `try/except`
+- We can use looping constructs like `for` and `while`
 
 Using these control flow constructs means we're taking our code out of the
 normal flow of execution (top-to-bottom, one line at a time) and instead
@@ -21,7 +21,7 @@ JavaScript, conditional statements and loops are critical for writing
 applications.
 
 In the next series of lessons, we'll explore common approaches to control flow,
-and learn some new syntax that is unique to Ruby.
+and learn some new syntax that is unique to Python.
 
 ## Conditional Operators
 
@@ -32,7 +32,7 @@ compare values.
 
 ## Comparison Operators
 
-In Ruby, many built-in classes have the following methods that can be used to
+In Python, many built-in classes have the following functions that can be used to
 compare two values:
 
 - `>`: greater than
@@ -42,7 +42,7 @@ compare two values:
 - `==`: equal to
 - `!=`: not equal to
 
-Unlike in JavaScript, the `==` method in Ruby **will not coerce strings to
+Unlike in JavaScript, the `==` function in Python **will not coerce strings to
 numbers** before comparing them, or perform some of the other type coercions
 that JavaScript does. For example, in JavaScript, using the `==` operator can
 lead to some strange behavior:
@@ -56,17 +56,17 @@ lead to some strange behavior:
 // => true 🤔
 ```
 
-In Ruby, the `==` method checks if the objects on both sides are considered the
+In Python, the `==` function checks if the objects on both sides are considered the
 equivalent values:
 
-```rb
+```py
 "1" == 1
 # => false
 1 == 1
 # => true
 ```
 
-There are some differences between Ruby's `==` and JavaScript's `===` though. In
+There are some differences between Python's `==` and JavaScript's `===` though. In
 JavaScript, the `===` operator checks if both objects have the same identity,
 i.e. refer to the same space in memory. For example, in JavaScript, this example
 returns `false` because the two arrays are unique objects in memory:
@@ -76,52 +76,52 @@ returns `false` because the two arrays are unique objects in memory:
 // => false
 ```
 
-In Ruby, this example returns `true` because Ruby considers these to have
+In Python, this example returns `true` because Python considers these to have
 equivalent values:
 
-```rb
+```py
 [1, 2, 3] == [1, 2, 3]
 # => true
 ```
 
-Ruby will also check if an Integer has the equivalent value to a Float, even
+Python will also check if an Integer has the equivalent value to a Float, even
 though they're technically different data types:
 
-```rb
+```py
 1.0 == 1
 # => true
 ```
 
-The reason for this is because in Ruby, the `==` operator is actually a _method_
-that has unique behavior that **depends on which class the method is defined
-in**! The code above is equivalent to the following method call:
+The reason for this is because in Python, the `==` operator is actually a _function_
+that has unique behavior that **depends on which class the function is defined
+in**! The code above is equivalent to the following function call:
 
-```rb
+```py
 1.0.==(1)
 ```
 
-Because Ruby heavily favors object-orientation as a language, you'll find
+Because Python heavily favors object-orientation as a language, you'll find
 that many features other languages would define as operators (like `==`, `>`,
-even math operators like `+` and `*`) are actually methods. If you're unsure
-what these methods do in a particular scenario, check the class definition in
+even math operators like `+` and `*`) are actually functions. If you're unsure
+what these functions do in a particular scenario, check the class definition in
 the documentation for the data type on the left-hand side of the `==` (for
 example, here is the documentation for the [Array class][array ==] and the
 [Integer class][integer ==]).
 
-[array ==]: https://ruby-doc.org/core-2.7.3/Array.html#method-i-3D-3D
-[integer ==]: https://ruby-doc.org/core-2.7.3/Integer.html#method-i-3D-3D
+[array ==]: https://Python-doc.org/core-2.7.3/Array.html#function-i-3D-3D
+[integer ==]: https://Python-doc.org/core-2.7.3/Integer.html#function-i-3D-3D
 
-> **Note**: While Ruby does have a `===` method, **it is not used the same way
+> **Note**: While Python does have a `===` function, **it is not used the same way
 > as it is in JavaScript**. There are very few scenarios when you want to use
-> the `===` method in Ruby; in general, for comparing data, you want to use the
-> `==`. [See here for examples][ruby ===] if you're curious about what this
-> method does.
+> the `===` function in Python; in general, for comparing data, you want to use the
+> `==`. [See here for examples][Python ===] if you're curious about what this
+> function does.
 
-[ruby ===]: https://stackoverflow.com/questions/3422223/vs-in-ruby/3422349#3422349
+[Python ===]: https://stackoverflow.com/questions/3422223/vs-in-Python/3422349#3422349
 
 ## Logical Operators
 
-Ruby has the same logical operators you'll find in many other languages,
+Python has the same logical operators you'll find in many other languages,
 including JavaScript:
 
 - `&&`: Logical **and**. Are both values truthy?
@@ -129,7 +129,7 @@ including JavaScript:
 - `!`: **not**. Coerces the data to its boolean equivalent, then reverses it
   (`true` becomes `false`, and vice versa).
 
-```rb
+```py
 true && true
 # => true
 false && false
@@ -148,10 +148,10 @@ false || true
 # true
 ```
 
-Ruby also has the ternary operator (`?:`) for writing an inline conditional
+Python also has the ternary operator (`?:`) for writing an inline conditional
 statement:
 
-```rb
+```py
 age = 1
 
 age < 2 ? "baby" : "not a baby"
@@ -159,7 +159,7 @@ age < 2 ? "baby" : "not a baby"
 
 This is the equivalent of the following `if/else` statement:
 
-```rb
+```py
 age = 1
 if age < 2
   "baby"
@@ -170,12 +170,12 @@ end
 
 ## Conclusion
 
-In the coming lessons, we'll be writing some methods that use control flow, so
-make sure to keep these methods for comparing data in mind — they'll be
+In the coming lessons, we'll be writing some functions that use control flow, so
+make sure to keep these functions for comparing data in mind — they'll be
 very important to your ability to write conditional logic and looping code
 successfully!
 
 ## Resources
 
-- [Ruby equality](https://www.rubyguides.com/2017/03/ruby-equality/)
-- [Ruby operators](https://www.rubyguides.com/2018/07/ruby-operators/)
+- [Python equality](https://www.Pythonguides.com/2017/03/Python-equality/)
+- [Python operators](https://www.Pythonguides.com/2018/07/Python-operators/)
