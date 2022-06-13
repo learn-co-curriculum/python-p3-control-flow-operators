@@ -105,58 +105,68 @@ though they're technically different data types:
 Python has the same logical operators you'll find in many other languages,
 including JavaScript:
 
-- `&&`: Logical **and**. Are both values truthy?
-- `||`: Logical **or**. Is one or the other value truthy?
-- `!`: **not**. Coerces the data to its boolean equivalent, then reverses it
-  (`true` becomes `false`, and vice versa).
+- `&`: Logical **and**. Are both values truthy?
+- `|`: Logical **or**. Is one or the other value truthy?
+- `^`: Logical **xor**. Is one (but not the other!) value truthy?
+- `not`: **not**. Coerces the data to its boolean equivalent, then reverses it
+  (`True` becomes `False`, and vice versa).
 
 ```py
-true && true
-# => true
-false && false
-# => false
-false && true
-# => false
-true || true
-# => true
-false || false 
-# => false
-false || true
-# => true
-!true
-# false
-!!true
-# true
+True & True
+# True
+False & False
+# False
+False & True
+# False
+True | True
+# True
+False | False
+# False
+False | True
+# True
+True ^ True
+# False
+False ^ False
+# False
+False ^ True
+# True
+not True
+# False
+not not True
+# True
 ```
 
-Python also has the ternary operator (`?:`) for writing an inline conditional
-statement:
+## Ternary Operators
+
+Python also allows us to use **ternary operators** (or _conditional
+expressions_) to evaluate the truthiness of complex statements in a single
+line.
 
 ```py
 age = 1
 
-age < 2 ? "baby" : "not a baby"
+is_baby = 'baby' if age < 2 else 'not a baby'
 ```
 
 This is the equivalent of the following `if/else` statement:
 
 ```py
 age = 1
-if age < 2
-  "baby"
-else
-  "not baby"
-end
+if age < 2:
+  is_baby = 'baby'
+else:
+  is_baby = 'not a baby'
 ```
 
 ## Conclusion
 
-In the coming lessons, we'll be writing some functions that use control flow, so
-make sure to keep these functions for comparing data in mind — they'll be
+In the coming lessons, we'll be writing some functions that use control flow,
+so make sure to keep these operators for comparing data in mind — they'll be
 very important to your ability to write conditional logic and looping code
 successfully!
 
 ## Resources
 
-- [Python equality](https://www.Pythonguides.com/2017/03/Python-equality/)
-- [Python operators](https://www.Pythonguides.com/2018/07/Python-operators/)
+- [Python equality](https://realpython.com/courses/python-is-identity-vs-equality)
+- [Python operators](https://www.geeksforgeeks.org/python-operators/)
+- [Python ternary operators](https://book.pythontips.com/en/latest/ternary_operators.html)
