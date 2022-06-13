@@ -4,7 +4,7 @@
 
 - Use common comparison functions for control flow (`==`, `!=`, `>`, `<`)
 - Use common operators for control flow (`&`, `|`, `~`, `^`)
-- Understand the differences in syntax between Ruby and JavaScript
+- Understand the differences in syntax between Python and JavaScript
 
 ## Introduction
 
