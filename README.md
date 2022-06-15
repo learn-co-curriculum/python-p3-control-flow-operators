@@ -3,7 +3,7 @@
 ## Learning Goals
 
 - Use common comparison functions for control flow (`==`, `!=`, `>`, `<`)
-- Use common operators for control flow (`&`, `|`, `~`, `^`)
+- Use common logical operators for control flow (`and`, `or`, `not`)
 - Understand the differences in syntax between Python and JavaScript
 
 ## Introduction
@@ -98,30 +98,23 @@ though they're technically different data types:
 Python has the same logical operators you'll find in many other languages,
 including JavaScript:
 
-- `&`: Logical **and**. Are both values truthy?
-- `|`: Logical **or**. Is one or the other value truthy?
-- `^`: Logical **xor**. Is one (but not the other!) value truthy?
+- `and`: **and**. Returns `True` if both statements are true.
+- `or`: **or**. Returns `True` if one of the two statements is true.
 - `not`: **not**. Coerces the data to its boolean equivalent, then reverses it
-  (`True` becomes `False`, and vice versa).
+(`True` becomes `False`, and vice versa).
 
 ```py
-True & True
+True and True
 # True
-False & False
+False and False
 # False
-False & True
+False and True
 # False
-True | True
+True or True
 # True
-False | False
+False or False
 # False
-False | True
-# True
-True ^ True
-# False
-False ^ False
-# False
-False ^ True
+False or True
 # True
 not True
 # False
