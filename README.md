@@ -23,13 +23,6 @@ applications.
 In the next series of lessons, we'll explore common approaches to control flow,
 and learn some new syntax that is unique to Python.
 
-## Conditional Operators
-
-In general, using control flow in any language means running certain code **if
-some condition is met**. That means that in order to use control flow
-effectively, it's important to know how to use conditional operators to
-compare values.
-
 ## Comparison Operators
 
 In Python, many built-in classes have the following functions that can be used to
@@ -136,28 +129,6 @@ not not True
 # True
 ```
 
-## Ternary Operators
-
-Python also allows us to use **ternary operators** (or _conditional
-expressions_) to evaluate the truthiness of complex statements in a single
-line.
-
-```py
-age = 1
-
-is_baby = 'baby' if age < 2 else 'not a baby'
-```
-
-This is the equivalent of the following `if/else` statement:
-
-```py
-age = 1
-if age < 2:
-  is_baby = 'baby'
-else:
-  is_baby = 'not a baby'
-```
-
 ## Conclusion
 
 In the coming lessons, we'll be writing some functions that use control flow,
@@ -169,4 +140,3 @@ successfully!
 
 - [Python equality](https://realpython.com/courses/python-is-identity-vs-equality)
 - [Python operators](https://www.geeksforgeeks.org/python-operators/)
-- [Python ternary operators](https://book.pythontips.com/en/latest/ternary_operators.html)
