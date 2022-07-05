@@ -2,9 +2,30 @@
 
 ## Learning Goals
 
-- Use common comparison functions for control flow (`==`, `!=`, `>`, `<`)
-- Use common logical operators for control flow (`and`, `or`, `not`)
-- Understand the differences in syntax between Python and JavaScript
+- Use common comparison functions for control flow (`==`, `!=`, `>`, `<`).
+- Use common logical operators for control flow (`and`, `or`, `not`).
+- Understand the differences in syntax between Python and JavaScript.
+
+***
+
+## Key Vocab
+
+- **Interpreter**: a program that executes other programs. Python programs
+require the Python interpreter to be installed on your computer so that they
+can be run.
+- **Python Shell**: an interactive interpreter that can be accessed from the
+command line.
+- **Data Type**: a specific kind of data. The Python interpreter uses these
+types to determine which actions can be performed on different data items.
+- **Exception**: a type of error that can be predicted and handled without
+causing a program to crash.
+- **Code Block**: a collection of code that is interpreted together. Python
+groups code blocks by indentation level.
+- **Function**: a named code block that performs a sequence of actions when it
+is called.
+- **Scope**: the area in your program where a specific variable can be called.
+
+***
 
 ## Introduction
 
@@ -22,6 +43,8 @@ applications.
 
 In the next series of lessons, we'll explore common approaches to control flow,
 and learn some new syntax that is unique to Python.
+
+***
 
 ## Comparison Operators
 
@@ -93,6 +116,8 @@ though they're technically different data types:
 
 [Python is]: https://stackoverflow.com/questions/21774629/python-is-vs-javascript
 
+***
+
 ## Logical Operators
 
 Python has the same logical operators you'll find in many other languages,
@@ -122,12 +147,16 @@ not not True
 # True
 ```
 
+***
+
 ## Conclusion
 
 In the coming lessons, we'll be writing some functions that use control flow,
 so make sure to keep these operators for comparing data in mind — they'll be
 very important to your ability to write conditional logic and looping code
 successfully!
+
+***
 
 ## Resources
 
